@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.angular/
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*

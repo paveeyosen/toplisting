@@ -1,0 +1,42 @@
+<section id="why-us" class="why-us-section">
+  <div class="orb orb-right"></div>
+
+  <div class="container">
+    <div class="why-layout">
+      <div class="why-left">
+        <div class="section-tag">🏆 Why TopListing</div>
+        <h2 class="section-title">
+          The Agency That<br />
+          <span class="gradient-text">Actually Delivers</span>
+        </h2>
+        <p class="why-desc">
+          We don't just run campaigns — we become your growth partner.
+          Combining human expertise with AI-powered tools, we build marketing
+          systems that compound results over time.
+        </p>
+        <div class="trust-row">
+          <div class="trust-item">
+            <span class="trust-val gradient-text">500+</span>
+            <span class="trust-lbl">Campaigns Launched</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-val gradient-text">$2M+</span>
+            <span class="trust-lbl">Ad Spend Managed</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-val gradient-text">40+</span>
+            <span class="trust-lbl">Industries Served</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reasons-grid">
+        <div class="reason-card glass-card" *ngFor="let r of reasons">
+          <div class="reason-icon">{{ r.icon }}</div>
+          <h4 class="reason-title">{{ r.title }}</h4>
+          <p class="reason-desc">{{ r.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

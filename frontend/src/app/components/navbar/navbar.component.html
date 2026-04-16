@@ -1,0 +1,40 @@
+<nav class="navbar" [class.scrolled]="scrolled()">
+  <div class="nav-container">
+    <!-- Logo -->
+    <div class="logo" (click)="scrollTo('hero')">
+      <span class="logo-icon">⬡</span>
+      <span class="logo-text">Top<span class="gradient-text">Listing</span></span>
+    </div>
+
+    <!-- Desktop Links -->
+    <ul class="nav-links">
+      <li *ngFor="let link of navLinks">
+        <button (click)="scrollTo(link.anchor)">{{ link.label }}</button>
+      </li>
+    </ul>
+
+    <!-- CTA -->
+    <button class="btn-primary nav-cta" (click)="scrollTo('contact')">
+      Get Started →
+    </button>
+
+    <!-- Mobile Hamburger -->
+    <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.open]="menuOpen()">
+    <ul>
+      <li *ngFor="let link of navLinks">
+        <button (click)="scrollTo(link.anchor)">{{ link.label }}</button>
+      </li>
+      <li>
+        <button class="btn-primary" (click)="scrollTo('contact')">Get Started →</button>
+      </li>
+    </ul>
+  </div>
+</nav>

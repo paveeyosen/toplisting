@@ -1,0 +1,52 @@
+<section id="services" class="services-section">
+  <div class="orb orb-left"></div>
+
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">⚡ Our Services</div>
+      <h2 class="section-title">
+        Everything You Need to<br />
+        <span class="gradient-text">Dominate Online</span>
+      </h2>
+      <p class="section-sub">
+        A full suite of digital marketing services, from organic search to
+        AI-driven automation — all under one roof.
+      </p>
+    </div>
+
+    <!-- Tab navigation -->
+    <div class="tab-nav">
+      <button
+        *ngFor="let cat of categories; let i = index"
+        class="tab-btn"
+        [class.active]="activeTab() === i"
+        (click)="setTab(i)"
+      >
+        <span>{{ cat.icon }}</span>
+        {{ cat.label }}
+      </button>
+    </div>
+
+    <!-- Services grid -->
+    <div class="services-grid">
+      <div
+        class="service-card glass-card"
+        *ngFor="let svc of activeServices"
+      >
+        <div class="svc-icon" [style.background]="'rgba(' + hexToRgb(svc.color) + ', 0.12)'" [style.color]="svc.color">
+          {{ svc.icon }}
+        </div>
+        <h3 class="svc-title">{{ svc.title }}</h3>
+        <p class="svc-tagline">{{ svc.tagline }}</p>
+        <ul class="svc-list">
+          <li *ngFor="let item of svc.items">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" [style.color]="svc.color">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,100 @@
+<section class="hero" id="hero">
+  <!-- Background orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Grid overlay -->
+  <div class="grid-overlay"></div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        AI-Powered Digital Marketing
+      </div>
+
+      <h1 class="hero-title">
+        Grow Your Business<br />
+        with <span class="gradient-text">Smart Digital</span><br />
+        Marketing
+      </h1>
+
+      <p class="hero-subtitle">
+        TopListing delivers cutting-edge SEO, AI-driven content, social media, PPC,
+        and lead generation strategies — engineered to maximize your ROI and
+        dominate your market.
+      </p>
+
+      <div class="hero-actions">
+        <button class="btn-primary" (click)="scrollTo('contact')">
+          Start Growing Today
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+        <button class="btn-outline" (click)="scrollTo('services')">
+          Explore Services
+        </button>
+      </div>
+
+      <!-- Stats bar -->
+      <div class="stats-bar">
+        <div class="stat" *ngFor="let stat of stats">
+          <span class="stat-value gradient-text">{{ stat.value }}</span>
+          <span class="stat-label">{{ stat.label }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero visual -->
+    <div class="hero-visual">
+      <div class="visual-card main-card glass-card">
+        <div class="card-header">
+          <div class="dot red"></div>
+          <div class="dot yellow"></div>
+          <div class="dot green"></div>
+          <span>Campaign Performance</span>
+        </div>
+        <div class="metric-grid">
+          <div class="metric">
+            <span class="metric-val">+247%</span>
+            <span class="metric-lbl">Organic Traffic</span>
+            <div class="metric-bar"><div class="bar-fill" style="width: 82%"></div></div>
+          </div>
+          <div class="metric">
+            <span class="metric-val">+189%</span>
+            <span class="metric-lbl">Lead Volume</span>
+            <div class="metric-bar"><div class="bar-fill" style="width: 65%"></div></div>
+          </div>
+          <div class="metric">
+            <span class="metric-val">3.2x</span>
+            <span class="metric-lbl">ROAS</span>
+            <div class="metric-bar"><div class="bar-fill" style="width: 74%"></div></div>
+          </div>
+          <div class="metric">
+            <span class="metric-val">#1</span>
+            <span class="metric-lbl">Rankings</span>
+            <div class="metric-bar"><div class="bar-fill" style="width: 90%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="visual-card side-card glass-card">
+        <div class="side-icon">🚀</div>
+        <div>
+          <div class="side-title">SEO Score</div>
+          <div class="side-val gradient-text">98/100</div>
+        </div>
+      </div>
+
+      <div class="visual-card side-card side-card-2 glass-card">
+        <div class="side-icon">🤖</div>
+        <div>
+          <div class="side-title">AI Optimized</div>
+          <div class="side-val gradient-text">Active</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

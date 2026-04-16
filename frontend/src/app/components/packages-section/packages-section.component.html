@@ -1,0 +1,73 @@
+<section id="packages" class="packages-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">💡 Packages</div>
+      <h2 class="section-title">
+        Flexible Plans for<br />
+        <span class="gradient-text">Every Business Stage</span>
+      </h2>
+      <p class="section-sub">
+        Choose the package that fits your goals. All plans are fully customizable —
+        we tailor every strategy to your unique business.
+      </p>
+    </div>
+
+    <div class="packages-grid">
+      <div
+        class="package-card glass-card"
+        *ngFor="let pkg of packages"
+        [class.highlighted]="pkg.highlight"
+      >
+        <!-- Badge -->
+        <div class="pkg-badge" *ngIf="pkg.badge" [style.background]="pkg.highlight ? 'var(--grad-primary)' : 'rgba(6,182,212,0.15)'" [style.color]="pkg.highlight ? '#fff' : '#06b6d4'">
+          {{ pkg.badge }}
+        </div>
+
+        <!-- Glow accent -->
+        <div class="pkg-glow" [style.background]="pkg.color" *ngIf="pkg.highlight"></div>
+
+        <div class="pkg-icon" [style.color]="pkg.color">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </div>
+
+        <h3 class="pkg-name">{{ pkg.name }}</h3>
+        <p class="pkg-tagline">{{ pkg.tagline }}</p>
+
+        <div class="pkg-price">
+          <span class="price-label">Pricing</span>
+          <span class="price-val" [style.color]="pkg.color">{{ pkg.price }}</span>
+        </div>
+
+        <ul class="pkg-features">
+          <li *ngFor="let f of pkg.features">
+            <div class="check-icon" [style.background]="'rgba(' + hexToRgb(pkg.color) + ', 0.12)'" [style.color]="pkg.color">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            {{ f }}
+          </li>
+        </ul>
+
+        <button
+          class="pkg-cta"
+          [class.btn-primary]="pkg.highlight"
+          [class.btn-outline]="!pkg.highlight"
+          (click)="scrollTo('contact')"
+        >
+          Get Started
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <p class="pkg-note">
+      All packages include a free consultation and custom strategy session.
+      <button class="link-btn" (click)="scrollTo('contact')">Talk to us →</button>
+    </p>
+  </div>
+</section>
